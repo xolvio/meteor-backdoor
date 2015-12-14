@@ -1,7 +1,7 @@
 Package.describe({
   name: 'xolvio:backdoor',
   summary: 'Runs arbitrary code on server',
-  version: '0.1.1',
+  version: '0.1.2',
   debugOnly: true
 });
 
