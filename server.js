@@ -2,6 +2,9 @@ var vm = Npm.require('vm');
 
 Meteor.methods({
   'xolvio/backdoor': function (func, args) {
+    check(func, String);
+    check(args, Match.Optional(Array));
+
     try {
       return {
         value: vm.runInThisContext('(' + func + ')').apply(global, args)
