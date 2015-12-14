@@ -18,5 +18,5 @@ Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('sanjo:jasmine@0.20.3');
 
-  api.addFiles('tests/server.js', 'server');
+  api.addFiles('tests/xolvio_backdoor.js', 'client');
 });
