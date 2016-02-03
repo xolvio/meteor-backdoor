@@ -9,6 +9,7 @@ Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.2.1');
   api.use('ecmascript');
   api.use('check');
+  api.use('modules');
   api.addFiles('server.js', 'server');
 });
 
