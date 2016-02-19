@@ -1,3 +1,5 @@
+/* globals meteorInstall: false */
+
 var vm = Npm.require('vm');
 
 Meteor.methods({
@@ -6,8 +8,11 @@ Meteor.methods({
     check(args, Match.Optional(Array));
 
     try {
+      const preparedFunc = vm.runInThisContext(
+        '(function (require) { return (' + func + '); })'
+      ).call(null, meteorInstall());
       return {
-        value: vm.runInThisContext('(' + func + ')').apply(global, args)
+        value: preparedFunc.apply(global, args)
       };
     } catch (error) {
       return {
