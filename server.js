@@ -16,7 +16,11 @@ Meteor.methods({
       };
     } catch (error) {
       return {
-        error: {message: error.toString(), stack: error.stack.toString()}
+        error: {
+          message: error.toString(),
+          stack: error.stack.toString(),
+          code: func
+        }
       };
     }
   }
