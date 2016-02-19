@@ -1,6 +1,7 @@
 /* globals meteorInstall: false */
 
 var vm = Npm.require('vm');
+global.require = meteorInstall();
 
 Meteor.methods({
   'xolvio/backdoor': function (func, args) {

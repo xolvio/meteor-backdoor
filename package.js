@@ -1,7 +1,7 @@
 Package.describe({
   name: 'xolvio:backdoor',
   summary: 'Runs arbitrary code on server',
-  version: '0.1.2',
+  version: '0.2.0',
   debugOnly: true
 });
 
@@ -9,6 +9,7 @@ Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.2.1');
   api.use('ecmascript', 'server');
   api.use('check', 'server');
+  api.use('modules', 'server');
   api.addFiles('server.js', 'server');
 });
 
