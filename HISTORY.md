@@ -1,5 +1,5 @@
 # 0.2.0
-* Adds `require` as a global  
+* Support for `require` in executed code 
 
 # 0.1.2
 * Fixes #1
