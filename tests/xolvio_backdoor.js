@@ -28,4 +28,15 @@ describe('xolvio/backdoor', function () {
       done();
     });
   });
+
+  it('require works', function (done) {
+    const myFunction = function () {
+      require('meteor/meteor');
+    };
+
+    Meteor.call('xolvio/backdoor', myFunction.toString(), function (error) {
+      expect(error).toBeUndefined();
+      done();
+    });
+  });
 });
