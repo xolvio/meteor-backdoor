@@ -18,7 +18,7 @@ Meteor.methods({
       return {
         error: {
           message: error.toString(),
-          stack: error.stack.toString(),
+          stack: error.stack ? error.stack.toString() : '',
           code: func
         }
       };

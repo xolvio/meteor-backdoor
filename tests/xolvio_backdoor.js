@@ -29,6 +29,24 @@ describe('xolvio/backdoor', function () {
     });
   });
 
+  it('handles errors with no stack', function (done) {
+    const myFunction = function () {
+      const error = new Error('fire');
+      delete error.stack;
+      throw error;
+    };
+
+    Meteor.call('xolvio/backdoor', myFunction.toString(), ['isServer'], function (error, result) {
+      expect(error).toBeUndefined();
+      expect(result).toEqual({
+        error: jasmine.objectContaining({
+          message: 'Error: fire'
+        })
+      });
+      done();
+    });
+  });
+
   it('require works', function (done) {
     const myFunction = function () {
       require('meteor/meteor');
