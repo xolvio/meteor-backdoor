@@ -22,3 +22,9 @@ You can also use the package for any hacking you might want to do. This package
 is a `debugOnly` package which means it will not get deployed to production. If
 you remove this flag, beware that it's a very dangerous package as it allows 
 FULL unrestricted access to your backend, which means your database.
+
+## Installation
+
+Package is hosted in [atmospherejs](https://atmospherejs.com/xolvio/backdoor), to install type:
+
+    meteor add xolvio:backdoor
